@@ -1,8 +1,6 @@
-import { Command } from "./enums/command";
-import { handleEdges } from "./mars";
-import { getRoverbyCommands } from "./rover";
-import { Mars } from "./types/mars";
-import { Rover } from "./types/rover";
+import { Command } from "../enums/command";
+import { Mars, handleEdges } from "./mars";
+import { Rover, getRoverbyCommands } from "./rover";
 
 export const execute = (
     mars: Mars,

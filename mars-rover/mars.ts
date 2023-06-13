@@ -1,6 +1,6 @@
-import { rover } from "./rover";
-import { Mars } from "./types/mars";
-import { Rover } from "./types/rover";
+import { Rover, rover } from "./rover";
+
+export type Mars = { rows: number; cols: number };
 
 export const mars = ({ rows, cols }: Mars) => {
     return { rows, cols };

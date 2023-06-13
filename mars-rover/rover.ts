@@ -1,8 +1,9 @@
-import { Command } from "./enums/command";
-import { Direction } from "./enums/direction";
-import { RotateLeft } from "./records/rotateLeft";
-import { RotateRight } from "./records/rotateRight";
-import { Rover } from "./types/rover";
+import { Command } from "../enums/command";
+import { Direction } from "../enums/direction";
+import { RotationLeft, RotationRight } from "../records/nextDirection";
+
+export type Position = { x: number; y: number };
+export type Rover = { position: Position; direction: Direction };
 
 const { North, West, South, East } = Direction;
 const { Left, Right, Forward, Backward } = Command;
@@ -74,9 +75,9 @@ export const moveBackward = ({ position, direction }: Rover) => {
 };
 
 export const rotateLeft = ({ position, direction }: Rover): Rover => {
-    return rover(position.x, position.y, RotateLeft[direction]);
+    return rover(position.x, position.y, RotationLeft[direction]);
 };
 
 export const rotateRight = ({ position, direction }: Rover): Rover => {
-    return rover(position.x, position.y, RotateRight[direction]);
+    return rover(position.x, position.y, RotationRight[direction]);
 };

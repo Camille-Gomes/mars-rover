@@ -1,8 +1,7 @@
-import { Direction } from "./enums/direction";
-import { Command } from "./enums/command";
+import { Direction } from "../enums/direction";
+import { Command } from "../enums/command";
 import { execute } from "./main";
-import { Rover } from "./types/rover";
-import { rover } from "./rover";
+import { Rover, rover } from "./rover";
 import { mars } from "./mars";
 
 const { North, West, South, East } = Direction;

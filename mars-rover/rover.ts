@@ -1,9 +1,34 @@
-import { Command } from "../enums/command";
-import { Direction } from "../enums/direction";
-import { RotationLeft, RotationRight } from "../records/nextDirection";
-
-export type Position = { x: number; y: number };
+type Position = { x: number; y: number };
 export type Rover = { position: Position; direction: Direction };
+type NextDirection = Record<Direction, Direction>;
+
+export enum Direction {
+    North = "N",
+    South = "S",
+    East = "E",
+    West = "W",
+}
+
+export enum Command {
+    Forward = "f",
+    Backward = "b",
+    Left = "l",
+    Right = "r",
+}
+
+export const RotationLeft: NextDirection = {
+    N: Direction.West,
+    W: Direction.South,
+    S: Direction.East,
+    E: Direction.North,
+};
+
+export const RotationRight: NextDirection = {
+    N: Direction.East,
+    E: Direction.South,
+    S: Direction.West,
+    W: Direction.North,
+};
 
 const { North, West, South, East } = Direction;
 const { Left, Right, Forward, Backward } = Command;
